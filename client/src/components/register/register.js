@@ -15,7 +15,7 @@ const Register = () => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setUser({   
+        setUser({
             ...user,
             [name]: value,
         });
@@ -25,8 +25,8 @@ const Register = () => {
         const { name, email, password, reEnterPassword } = user;
         if (name && email && password && password === reEnterPassword) {
             axios
-                 //intopcol-back.herokuapp.com
-                .post("http://localhost:9002/register", user)
+                //intopcol-back.herokuapp.com
+                .post("https://intopcolback.herokuapp.com/register", user)
                 .then((res) => {
                     alert(res.data.message);
                     history.push("/login");
